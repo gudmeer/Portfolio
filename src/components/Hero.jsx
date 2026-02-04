@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import homeData from "../data/homeData.jsx";
 import Tippy from '@tippyjs/react';
 import Swal from 'sweetalert2';
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Home = () => {
   const [currentText, setCurrentText] = useState("");
@@ -44,6 +46,11 @@ const Home = () => {
     return () => clearInterval(cursorTimer);
   }, []);
 
+  useEffect(() => {
+  AOS.refresh();
+}, []);
+
+
   return (
     <section
       id="home"
@@ -55,40 +62,55 @@ const Home = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[calc(100vh-5rem)] py-12">
           
           {/* Left Section */}
-          <div className="space-y-8">
-            <div className="space-y-4">
-              <h1
-                className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900"
-                data-aos-delay="600"
-                data-aos="fade-down"
-              >
-                {homeData.title}
-              </h1>
-              <h2
-                className="text-xl sm:text-2xl lg:text-3xl font-semibold text-gray-800 flex items-center"
-                data-aos-delay="600"
-                data-aos="fade-right"
-              >
-                <span className="typing-text">
-                  {currentText}
-                  <span
-                    className={`cursor ${
-                      showCursor ? "opacity-100" : "opacity-0"
-                    } transition-all duration-200`}
-                  >
-                    |
-                  </span>
-                </span>
-              </h2>
-            </div>
+<div className="space-y-8 text-center lg:text-left flex flex-col items-center lg:items-start order-1 lg:order-none">
 
-            <p
-              className="text-lg text-gray-700 leading-relaxed max-w-lg"
-              data-aos-delay="600"
-              data-aos="fade-left"
-            >
-              {homeData.description}
-            </p>
+  <div className="space-y-4">
+    <h1
+      className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900"
+      data-aos-delay="600"
+      data-aos="fade-down"
+    >
+      {homeData.title}
+    </h1>
+
+    <h2
+      className="text-xl sm:text-2xl lg:text-3xl font-semibold text-gray-800 flex justify-center lg:justify-start"
+      data-aos-delay="600"
+      data-aos="fade-right"
+    >
+      <span className="typing-text">
+        {currentText}
+        <span
+          className={`cursor ${
+            showCursor ? "opacity-100" : "opacity-0"
+          } transition-all duration-200`}
+        >
+          |
+        </span>
+      </span>
+    </h2>
+
+    {/* Profile Image - Mobile */}
+    <div className="flex justify-center lg:hidden mt-12"
+     data-aos="fade-up"
+  data-aos-delay="500"
+  data-aos-duration="1000">
+      <img
+        src={homeData.img}
+        alt="Profile"
+        className="w-64 sm:w-72 h-auto object-contain"
+      />
+    </div>
+  </div>
+
+  <p
+    className="text-lg text-gray-700 leading-relaxed max-w-lg text-center lg:text-left"
+    data-aos-delay="600"
+    data-aos="fade-left"
+  >
+    {homeData.description}
+  </p>
+
 
             {/* Social Media */}
             <div
@@ -203,7 +225,7 @@ const Home = () => {
 
           {/* Right Section - Profile Image */}
           <div
-            className="relative flex justify-center items-center"
+            className="relative hidden lg:flex justify-center items-center"
             data-aos-delay="600"
             data-aos="fade-up"
           >
