@@ -6,7 +6,7 @@ const homeData = {
     "Student",
     "Scientific Computing",
     "Full Stack Developer",
-    "Nonconformist",
+    "Data Analyst",
   ],
   description:
     "Student of Scientific Computing focused on backend development and software architecture, experienced in building RESTful APIs, scalable systems, and using modern frameworks and databases.",
@@ -43,7 +43,7 @@ const homeData = {
     {
       platform: "Instagram",
       icon: "bx bxl-instagram",
-      href: "https://www.instagram.com/duskgud_",
+      href: "https://www.instagram.com/gudmeer_",
     },
     {
       platform: "WhatsApp",
