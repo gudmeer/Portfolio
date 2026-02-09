@@ -23,7 +23,17 @@ export const portfolioData = {
         desc: "A sleek and responsive personal portfolio built with Vite and Tailwind CSS. This site features categorized project sections, certificates, and a dynamic tech stack. Optimized for both desktop and mobile experiences, it reflects professional branding with clean code.",
         demo: "#",
         tags: ["Vite", "React", "Tailwind CSS", "JavaScript"]
+      },
+      {
+        id: 3,
+        img: "/assets/project.png",
+        title: "Ukurruku",
+        ssubtitle: "A modern platform for social gaming experiences.",
+        desc: "Ukurruku is an interactive web application focused on social games, built with React and Vite. It features custom navigation handling, gesture-based interaction, and a fully responsive UI styled with Tailwind CSS, providing a smooth experience across mobile and desktop devices.",
+        demo: "https://ukurruku.vercel.app/",
+        tags: ["React", "Vite", "Tailwind CSS", "JavaScript", "SPA", "UX/UI"]
       }
+
     ],
 
     certificates: [

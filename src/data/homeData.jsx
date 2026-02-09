@@ -39,7 +39,7 @@ const homeData = {
       platform: "GitHub",
       icon: "bx bxl-github",
       href: "https://github.com/gudmeer",
-    },
+    }, 
     {
       platform: "Instagram",
       icon: "bx bxl-instagram",
